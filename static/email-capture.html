@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RizzosAI - Automated Domain Rental & Affiliate System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0033a0 0%, #d9001f 100%);
+      padding: 20px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      height: 120px;
+      width: auto;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .hero-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 3.5em;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #0033a0 0%, #d9001f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5em;
+      color: #4a5568;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+
+    .cta-box {
+      background: white;
+      border: 3px solid #0033a0;
+      border-radius: 20px;
+      padding: 50px 40px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 10px 40px rgba(0, 51, 160, 0.15);
+    }
+
+    .cta-title {
+      font-size: 2em;
+      color: #0033a0;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .cta-description {
+      font-size: 1.2em;
+      color: #4a5568;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .email-input {
+      flex: 1;
+      padding: 18px 24px;
+      font-size: 1.1em;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .email-input:focus {
+      outline: none;
+      border-color: #0033a0;
+      box-shadow: 0 0 0 4px rgba(0, 51, 160, 0.1);
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #d9001f 0%, #0033a0 100%);
+      color: white;
+      padding: 18px 40px;
+      font-size: 1.1em;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(217, 0, 31, 0.3);
+    }
+
+    .privacy-text {
+      color: #718096;
+      font-size: 0.9em;
+      margin-top: 15px;
+    }
+
+    .features-section {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 15px;
+      padding: 35px 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      border-color: #0033a0;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 51, 160, 0.15);
+    }
+
+    .feature-icon {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .feature-title {
+      font-size: 1.5em;
+      color: #0033a0;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .feature-description {
+      color: #4a5568;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .stats-section {
+      background: linear-gradient(135deg, #0033a0 0%, #d9001f 100%);
+      padding: 60px 20px;
+      margin-top: 80px;
+    }
+
+    .stats-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .stat-item {
+      color: white;
+    }
+
+    .stat-number {
+      font-size: 3.5em;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    .footer {
+      background: #f7fafc;
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 2px solid #e2e8f0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #0033a0;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #d9001f;
+    }
+
+    .footer-text {
+      color: #718096;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.2em;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2em;
+      }
+
+      .email-form {
+        flex-direction: column;
+      }
+
+      .logo {
+        height: 80px;
+      }
+
+      .cta-box {
+        padding: 30px 20px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-section, .features-section, .stats-section {
+      animation: fadeIn 0.8s ease;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Logo -->
+  <div class="header">
+    <div class="header-content">
+      <img src="images/logo.png" alt="RizzosAI Logo" class="logo">
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1 class="hero-title">Build Your Empire with Domain Rentals</h1>
+    <p class="hero-subtitle">Automated affiliate system • Daily passive income • Your own branded domain</p>
+    
+    <div class="cta-box">
+      <h2 class="cta-title">🔓 Get Started Today</h2>
+      <p class="cta-description">Join RizzosAI and start earning $20/day per referral with our automated domain rental system.</p>
+      
+      <form class="email-form" id="emailForm">
+        <input 
+          type="email" 
+          id="email-input" 
+          class="email-input" 
+          placeholder="your@email.com" 
+          required 
+          autocomplete="email"
+        >
+        <button type="submit" class="submit-btn">Start Now</button>
+      </form>
+      
+      <p class="privacy-text">🔒 Your email is 100% safe. We respect your privacy.</p>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features-section">
+    <div class="feature-card">
+      <div class="feature-icon">🌐</div>
+      <h3 class="feature-title">Own Your Domain</h3>
+      <p class="feature-description">Rent a professional domain and build your brand with our automated system.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <h3 class="feature-title">Earn Daily</h3>
+      <p class="feature-description">$20/day per active referral with our unique 2nd-referral pass-up commission model.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🚀</div>
+      <h3 class="feature-title">Fully Automated</h3>
+      <p class="feature-description">Everything is automated - domain registration, payments, and commission tracking.</p>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" id="stat-users">0</div>
+        <div class="stat-label">Active Members</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-domains">0</div>
+        <div class="stat-label">Domains Rented</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">$20</div>
+        <div class="stat-label">Daily Per Referral</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Automated System</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-links">
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms-of-service.html">Terms of Service</a>
+      <a href="/dashboard">Dashboard</a>
+    </div>
+    <p class="footer-text">© 2025 RizzosAI.com - All Rights Reserved</p>
+  </div>
+
+  <script>
+    // Handle email form submission
+    document.getElementById('emailForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('email-input').value.trim();
+      
+      if (!email) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      
+      try {
+        const response = await fetch('/api/capture-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success || response.ok) {
+          window.location.href = '/domain-entry';
+        } else {
+          alert(data.error || 'Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Network error. Please try again.');
+      }
+    });
+
+    // Load live stats
+    async function loadStats() {
+      try {
+        const response = await fetch('/api/promotion-config');
+        const data = await response.json();
+        
+        if (data.live_signups !== undefined) {
+          document.getElementById('stat-users').textContent = data.live_signups;
+          document.getElementById('stat-domains').textContent = data.live_signups;
+        }
+      } catch (error) {
+        console.log('Could not load stats');
+      }
+    }
+    
+    loadStats();
+    setInterval(loadStats, 30000); // Update every 30 seconds
+  </script>
+</body>
+</html>
