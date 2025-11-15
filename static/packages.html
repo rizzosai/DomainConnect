@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-DAY FREEDOM PASS - $20 ALL PACKAGES | RizzosAI</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e60000 0%, #fff 50%, #001f5b 100%);
+      color: #001f5b;
+    }
+
+    header {
+      background: #e60000;
+      color: #fff;
+      padding: 40px 0 24px 0;
+      text-align: center;
+    }
+
+    .promo-banner {
+      background: linear-gradient(135deg, #001f5b 0%, #e60000 100%);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 5px solid #ffd700;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .promo-banner h1 {
+      font-size: 3em;
+      margin: 0 0 20px 0;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .promo-banner .countdown {
+      font-size: 1.8em;
+      font-weight: bold;
+      background: rgba(255,255,255,0.2);
+      padding: 15px 30px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    .payment-highlight {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(230, 0, 0, 0.3);
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 40px 30px;
+      border: 3px solid #e60000;
+      text-align: center;
+    }
+
+    .payment-highlight h2 {
+      color: #e60000;
+      font-size: 2.5em;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .payment-highlight .benefit {
+      font-size: 1.4em;
+      line-height: 1.8;
+      margin: 20px 0;
+      color: #001f5b;
+    }
+
+    .payment-highlight .benefit strong {
+      color: #e60000;
+      font-size: 1.2em;
+    }
+
+    .community-box {
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+      border-radius: 16px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 40px 30px;
+      border: 3px solid #e60000;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .community-box h2 {
+      color: #001f5b;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+    }
+
+    .community-box p {
+      font-size: 1.3em;
+      line-height: 1.6;
+      color: #001f5b;
+      margin: 15px 0;
+    }
+
+    .passup-explanation {
+      background: #fff;
+      border-radius: 16px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 40px 30px;
+      border: 3px solid #001f5b;
+    }
+
+    .passup-explanation h2 {
+      color: #001f5b;
+      text-align: center;
+      font-size: 2.2em;
+      margin-bottom: 25px;
+    }
+
+    .passup-explanation .how-it-works {
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin: 20px 0;
+    }
+
+    .passup-explanation .highlight-box {
+      background: #f8f9fa;
+      border-left: 5px solid #e60000;
+      padding: 20px;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1400px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .package-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,31,91,0.15);
+      border: 3px solid #e60000;
+      padding: 30px 25px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .package-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .package-card .original-price {
+      font-size: 1.2em;
+      text-decoration: line-through;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .package-card .promo-price {
+      font-size: 3em;
+      color: #e60000;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .package-card .badge {
+      position: absolute;
+      top: -15px;
+      right: 20px;
+      background: #ffd700;
+      color: #001f5b;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 0.9em;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .package-card h3 {
+      font-size: 2em;
+      color: #001f5b;
+      margin-bottom: 15px;
+    }
+
+    .package-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0;
+      text-align: left;
+    }
+
+    .package-card li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 1em;
+    }
+
+    .package-card li:before {
+      content: "✓ ";
+      color: #e60000;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .buy-button {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #e60000 0%, #b50000 100%);
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.3em;
+      padding: 18px 0;
+      border-radius: 10px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(230,0,0,0.3);
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    .buy-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(230,0,0,0.5);
+    }
+
+    @media (max-width: 768px) {
+      .promo-banner h1 {
+        font-size: 2em;
+      }
+      
+      .payment-highlight h2 {
+        font-size: 1.8em;
+      }
+      
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="promo-banner">
+    <h1>🚨 7-DAY FREEDOM PASS 🚨</h1>
+    <p style="font-size: 1.8em; margin: 15px 0;">ALL PACKAGES JUST $20!</p>
+    <p style="font-size: 1.3em; margin: 10px 0;">Limited Time Launch Event - Doors Close in 7 Days!</p>
+    <div class="countdown">⏰ DON'T MISS OUT - JOIN THE MOVEMENT NOW!</div>
+  </div>
+
+  <div class="payment-highlight">
+    <h2>💰 DAILY MIDNIGHT PAYMENTS 💰</h2>
+    <div class="benefit">
+      <strong>NO WAITING!</strong> Your earnings hit your bank account at <strong>MIDNIGHT EVERY NIGHT</strong>
+    </div>
+    <div class="benefit">
+      Not weekly. Not monthly. <strong>DAILY!</strong>
+    </div>
+    <div class="benefit">
+      No waiting by the mailbox like ClickBank - Your money is <strong>DEPOSITED DIRECTLY</strong> to your account on the dot at midnight!
+    </div>
+    <div class="benefit">
+      Every referral pays you <strong>$20 PER DAY</strong> - automatically, forever!
+    </div>
+  </div>
+
+  <div class="community-box">
+    <h2>🎉 JOIN THE RED ROCKS LAUNCH PARTY! 🎉</h2>
+    <p><strong>We're all about helping friends and family get FILTHY RICH!</strong></p>
+    <p>This isn't just a business - it's a <strong>COMMUNITY</strong>. We're reuniting as one big family to live abundant lives together!</p>
+    <p><strong>🎊 EVERYONE IS INVITED TO THE BIG LAUNCH PARTY AT RED ROCKS! 🎊</strong></p>
+    <p>Let's stick together and ALL get rich as a community. This is about <strong>FAMILY</strong>, <strong>FRIENDSHIP</strong>, and <strong>FREEDOM</strong>!</p>
+  </div>
+
+  <div class="passup-explanation">
+    <h2>🎯 How The System Works - After Your First 3 Sales</h2>
+    <div class="how-it-works">
+      <p><strong>Here's the deal, and I think it's only fair:</strong></p>
+      
+      <div class="highlight-box">
+        ✅ <strong>YOUR 1ST REFERRAL:</strong> Goes to YOU - You earn $20/day forever!
+      </div>
+      
+      <div class="highlight-box">
+        ⬆️ <strong>YOUR 2ND REFERRAL:</strong> Passes up to ME (the site owner) - I'm the one who built this system to make YOU rich, so I think this is fair!
+      </div>
+      
+      <div class="highlight-box">
+        🔥 <strong>YOUR 3RD REFERRAL & BEYOND:</strong> ALL YOURS FOR LIFE! The system is YOURS!
+      </div>
+      
+      <p style="margin-top: 25px; font-size: 1.1em;">
+        <strong>After your first 3 sales, THE SYSTEM IS YOURS!</strong> Every referral after that pays you $20/day, deposited at midnight, forever. I built this to help my friends and family live abundantly - we're all in this together!
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width: 1400px; margin: 50px auto; padding: 0 20px;">
+    <h2 style="text-align: center; color: #001f5b; font-size: 2.5em; margin-bottom: 20px;">
+      Choose Your Package - All $20 for 7 Days Only!
+    </h2>
+    <p style="text-align: center; font-size: 1.3em; color: #e60000; margin-bottom: 40px;">
+      After 7 days, these packages return to their FULL PRICES. Lock in $20 TODAY!
+    </p>
+  </div>
+
+  <div class="packages-grid">
+    
+    <div class="package-card">
+      <div class="badge">SAVE $29!</div>
+      <h3>STARTER</h3>
+      <div class="original-price">Regular: $49</div>
+      <div class="promo-price">$20</div>
+      <p style="color: #e60000; font-weight: bold; font-size: 1.1em;">7-Day Promo Price</p>
+      
+      <ul>
+        <li>Full access to your back office dashboard</li>
+        <li>Your unique affiliate link</li>
+        <li>Earn $20/day per referral</li>
+        <li>Daily midnight payments to your bank</li>
+        <li>1st referral = YOURS</li>
+        <li>2nd referral = passes to owner</li>
+        <li>3rd+ referrals = ALL YOURS FOREVER</li>
+        <li>Complete training guides included</li>
+      </ul>
+      
+      <button class="buy-button" onclick="selectPackage('basic')">
+        Claim Starter - $20
+      </button>
+    </div>
+
+    <div class="package-card">
+      <div class="badge">SAVE $79!</div>
+      <h3>PRO</h3>
+      <div class="original-price">Regular: $99</div>
+      <div class="promo-price">$20</div>
+      <p style="color: #e60000; font-weight: bold; font-size: 1.1em;">7-Day Promo Price</p>
+      
+      <ul>
+        <li>Everything in STARTER</li>
+        <li>$10 Facebook Ads run for you</li>
+        <li>Custom tracking URL for ads</li>
+        <li>Advanced business strategies</li>
+        <li>Priority support access</li>
+        <li>Daily midnight bank deposits</li>
+        <li>Lifetime $20/day earnings per referral</li>
+        <li>Advanced training library</li>
+      </ul>
+      
+      <button class="buy-button" onclick="selectPackage('starter')">
+        Claim Pro - $20
+      </button>
+    </div>
+
+    <div class="package-card">
+      <div class="badge">SAVE $279!</div>
+      <h3>ELITE</h3>
+      <div class="original-price">Regular: $299</div>
+      <div class="promo-price">$20</div>
+      <p style="color: #e60000; font-weight: bold; font-size: 1.1em;">7-Day Promo Price</p>
+      
+      <ul>
+        <li>Everything in STARTER + PRO</li>
+        <li>$50 Facebook Ads run for you</li>
+        <li>VIP tracking & analytics</li>
+        <li>Elite scaling strategies</li>
+        <li>VIP support priority</li>
+        <li>Daily midnight bank deposits</li>
+        <li>Lifetime $20/day earnings per referral</li>
+        <li>Complete elite training vault</li>
+      </ul>
+      
+      <button class="buy-button" onclick="selectPackage('professional')">
+        Claim Elite - $20
+      </button>
+    </div>
+
+    <div class="package-card">
+      <div class="badge">SAVE $479!</div>
+      <h3>EMPIRE</h3>
+      <div class="original-price">Regular: $499</div>
+      <div class="promo-price">$20</div>
+      <p style="color: #e60000; font-weight: bold; font-size: 1.1em;">7-Day Promo Price</p>
+      
+      <ul>
+        <li>Everything in STARTER + PRO + ELITE</li>
+        <li>$100 Facebook Ads run for you</li>
+        <li>Premium tracking suite</li>
+        <li>Empire building masterclass</li>
+        <li>White-glove VIP support</li>
+        <li>Daily midnight bank deposits</li>
+        <li>Lifetime $20/day earnings per referral</li>
+        <li>COMPLETE empire training vault (35 guides)</li>
+      </ul>
+      
+      <button class="buy-button" onclick="selectPackage('empire')">
+        Claim Empire - $20
+      </button>
+    </div>
+
+  </div>
+
+  <div style="background: #001f5b; color: white; padding: 50px 20px; margin-top: 60px; text-align: center;">
+    <h2 style="font-size: 2.5em; margin-bottom: 20px;">⚠️ THIS IS A LIMITED TIME OFFER ⚠️</h2>
+    <p style="font-size: 1.5em; margin: 15px 0;">The doors are ONLY OPEN for 7 DAYS!</p>
+    <p style="font-size: 1.3em; margin: 15px 0;">After that, these $20 packages are GONE and you'll pay full price!</p>
+    <p style="font-size: 1.8em; margin: 30px 0; color: #ffd700; font-weight: bold;">
+      Don't miss your chance to be part of the founding community!
+    </p>
+    <p style="font-size: 1.2em; margin: 15px 0;">
+      Join us at the Red Rocks launch party. Let's all get rich together!
+    </p>
+  </div>
+
+  <footer style="text-align: center; padding: 30px 20px; color: rgba(255, 255, 255, 0.8); margin-top: 50px; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+    <p style="margin-bottom: 10px;">&copy; 2025 RizzosAI. All rights reserved.</p>
+    <p>
+      <a href="/privacy-policy.html" style="color: #ffd700; text-decoration: none; margin: 0 15px;">Privacy Policy</a> |
+      <a href="/terms-of-service.html" style="color: #ffd700; text-decoration: none; margin: 0 15px;">Terms of Service</a>
+    </p>
+  </footer>
+
+  <div id="registrationModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="background: white; border-radius: 20px; padding: 40px; max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto;">
+      <h2 style="color: #001f5b; margin-bottom: 20px; text-align: center;">Complete Your Registration</h2>
+      <p style="color: #666; text-align: center; margin-bottom: 30px;">Enter your details to claim your <span id="modalPackageName" style="color: #e60000; font-weight: bold;"></span> package!</p>
+      
+      <form id="registrationForm" onsubmit="handleRegistration(event)">
+        <div style="margin-bottom: 20px;">
+          <label style="display: block; color: #001f5b; font-weight: 600; margin-bottom: 8px;">Full Name *</label>
+          <input type="text" id="fullName" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em;">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+          <label style="display: block; color: #001f5b; font-weight: 600; margin-bottom: 8px;">Email Address *</label>
+          <input type="email" id="email" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em;">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+          <label style="display: block; color: #001f5b; font-weight: 600; margin-bottom: 8px;">Your Domain from Store.RizzosAI.com</label>
+          <input type="text" id="domain" placeholder="yourdomain.com (optional)" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em;">
+          <small style="color: #666; font-size: 0.85em;">If you purchased a domain from our store, enter it here</small>
+        </div>
+        
+        <div style="margin-bottom: 25px;">
+          <label style="display: block; color: #001f5b; font-weight: 600; margin-bottom: 8px;">Choose a Username *</label>
+          <input type="text" id="username" required minlength="3" pattern="[a-zA-Z0-9]+" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1em;">
+          <small style="color: #666; font-size: 0.85em;">Alphanumeric only, min 3 characters</small>
+        </div>
+        
+        <div id="errorMessage" style="display: none; background: #ffe6e6; color: #d9001f; padding: 12px; border-radius: 8px; margin-bottom: 20px; text-align: center;"></div>
+        
+        <button type="submit" id="submitBtn" style="width: 100%; background: linear-gradient(135deg, #e60000 0%, #b50000 100%); color: white; padding: 15px; border: none; border-radius: 10px; font-size: 1.2em; font-weight: bold; cursor: pointer; margin-bottom: 15px;">
+          Continue to Payment - $20
+        </button>
+        
+        <button type="button" onclick="closeModal()" style="width: 100%; background: #999; color: white; padding: 12px; border: none; border-radius: 10px; font-size: 1em; cursor: pointer;">
+          Cancel
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let selectedPackage = null;
+    const urlParams = new URLSearchParams(window.location.search);
+    const referrerUsername = urlParams.get('ref') || '';
+
+    const packageNames = {
+      'basic': 'Starter',
+      'starter': 'Pro',
+      'professional': 'Elite',
+      'empire': 'Empire'
+    };
+
+    function selectPackage(packageId) {
+      selectedPackage = packageId;
+      document.getElementById('modalPackageName').textContent = packageNames[packageId];
+      document.getElementById('registrationModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('registrationModal').style.display = 'none';
+      document.getElementById('registrationForm').reset();
+      document.getElementById('errorMessage').style.display = 'none';
+    }
+
+    async function handleRegistration(event) {
+      event.preventDefault();
+      
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const domain = document.getElementById('domain').value.trim();
+      const username = document.getElementById('username').value.trim().toLowerCase();
+      const submitBtn = document.getElementById('submitBtn');
+      const errorDiv = document.getElementById('errorMessage');
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Processing...';
+      errorDiv.style.display = 'none';
+      
+      try {
+        const response = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            package_id: selectedPackage,
+            referrer: referrerUsername
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (data.error) {
+          throw new Error(data.error);
+        }
+        
+        sessionStorage.setItem('pending_registration', JSON.stringify({
+          session_id: data.session_id,
+          username: username,
+          email: email,
+          full_name: fullName,
+          domain_name: domain,
+          package_id: selectedPackage,
+          referrer: referrerUsername
+        }));
+        
+        window.location.href = data.checkout_url;
+        
+      } catch (error) {
+        errorDiv.textContent = error.message || 'An error occurred. Please try again.';
+        errorDiv.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Continue to Payment - $20';
+      }
+    }
+  </script>
+</body>
+</html>
