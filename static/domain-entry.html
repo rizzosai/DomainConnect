@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎯 Lock Down Your Domain - 7 Days Left!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0033a0 0%, #d9001f 100%);
+      color: #fff;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .header-box {
+      background: linear-gradient(135deg, #d9001f 0%, #ff6b00 100%);
+      border: 5px solid #ffd700;
+      border-radius: 25px;
+      padding: 40px 30px;
+      margin: 30px 0;
+      text-align: center;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .urgent-badge {
+      background: #ffd700;
+      color: #000;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 900;
+      font-size: 0.9em;
+      letter-spacing: 2px;
+      display: inline-block;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: 900;
+      margin: 15px 0;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .countdown-mini {
+      background: rgba(0, 0, 0, 0.3);
+      border: 2px solid #ffd700;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 20px auto;
+      max-width: 400px;
+      font-size: 1.8em;
+      font-weight: 900;
+      color: #ffd700;
+    }
+
+    .content-section {
+      background: rgba(255, 255, 255, 0.1);
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 40px 35px;
+      margin: 30px 0;
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #ffd700;
+    }
+
+    .step-list {
+      text-align: left;
+      margin: 25px 0;
+    }
+
+    .step {
+      background: rgba(0, 0, 0, 0.3);
+      border-left: 5px solid #ffd700;
+      padding: 20px 25px;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+
+    .step-number {
+      font-size: 1.5em;
+      font-weight: 900;
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .step-content {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .domain-form {
+      background: rgba(0, 0, 0, 0.4);
+      border: 3px solid #ffd700;
+      border-radius: 20px;
+      padding: 35px;
+      margin: 30px 0;
+    }
+
+    .form-group {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-size: 1.2em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+
+    input[type="text"], input[type="url"] {
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 1.1em;
+      border: 2px solid #ffd700;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #000;
+      font-weight: 600;
+    }
+
+    input[type="text"]:focus, input[type="url"]:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+    }
+
+    .example-text {
+      font-size: 0.9em;
+      opacity: 0.8;
+      margin-top: 8px;
+    }
+
+    .submit-button {
+      width: 100%;
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      color: #000;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.5em;
+      font-weight: 900;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 25px;
+      box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .submit-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(255, 215, 0, 0.7);
+    }
+
+    .submit-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .benefit-box {
+      background: linear-gradient(135deg, #28a745, #20c997);
+      border: 3px solid #fff;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .benefit-title {
+      font-size: 1.5em;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .benefit-list {
+      list-style: none;
+      text-align: left;
+    }
+
+    .benefit-list li {
+      padding: 10px 0;
+      font-size: 1.1em;
+    }
+
+    .benefit-list li:before {
+      content: "✅ ";
+      margin-right: 10px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8em; }
+      h2 { font-size: 1.5em; }
+      .countdown-mini { font-size: 1.3em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-box">
+      <div class="urgent-badge">⏰ 7 DAYS LEFT ⏰</div>
+      <h1>🎯 Lock Down Your Domain & Get FULLY UPGRADED!</h1>
+      <div class="countdown-mini" id="countdown">7d 00h 00m 00s</div>
+      <p style="font-size: 1.2em; margin-top: 15px;">
+        Once you secure your domain, you'll unlock FULL ACCESS to everything!
+      </p>
+    </div>
+
+    <div class="content-section">
+      <h2>📋 Here's What Happens Next...</h2>
+      
+      <div class="step-list">
+        <div class="step">
+          <div class="step-number">STEP 1: Choose Your Domain Name</div>
+          <div class="step-content">
+            Enter your desired domain name below (like <strong>yourname-rizzosai.com</strong>)
+            <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.85;">
+              💡 <strong>One-Time $20 Payment:</strong> Covers domain registration + daily $20 rental starts automatically
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">STEP 2: We Register It For You</div>
+          <div class="step-content">
+            We'll handle the domain registration automatically - no external sites needed!
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">STEP 3: Get INSTANT Full Access</div>
+          <div class="step-content">
+            Your back office unlocks immediately with ALL guides, training, and tools
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">STEP 4: Set Up Your Email System</div>
+          <div class="step-content">
+            Follow our complete Sender.net setup guide (with affiliate bonuses!)
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">STEP 5: Start Earning</div>
+          <div class="step-content">
+            Share your link and watch the automated referrals roll in - your 2nd referral goes to admin!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefit-box">
+      <div class="benefit-title">🎁 What You Get With Full Upgrade:</div>
+      <ul class="benefit-list">
+        <li>Complete Back Office Control</li>
+        <li>All Package Tiers Unlocked (Normally $499)</li>
+        <li>Automated Referral System</li>
+        <li>Email Marketing Guides + Sender.net Setup</li>
+        <li>Domain Setup Instructions</li>
+        <li>Premium Training Library</li>
+        <li>Daily Earnings Tracking</li>
+        <li>Lifetime Access (7-Day Launch Price)</li>
+      </ul>
+    </div>
+
+    <div class="domain-form">
+      <h2 style="text-align: center; margin-bottom: 25px;">
+        🔐 $20 One-Time Payment - Get Your Domain + Full Access
+      </h2>
+      
+      <form onsubmit="handleDomainSubmit(event)">
+        <div class="form-group">
+          <label for="domain-name">Your Domain Name:</label>
+          <input 
+            type="text" 
+            id="domain-name" 
+            placeholder="yourname-rizzosai"
+            required
+            oninput="resetDomainCheck()"
+          >
+          <div class="example-text">Example: john-rizzosai or maryrizzosai (we'll add .com automatically)</div>
+          <button type="button" onclick="checkDomainAvailability()" class="check-btn" id="check-btn" style="margin-top: 15px; background: linear-gradient(135deg, #28a745, #20c997); color: white; border: none; padding: 12px 30px; border-radius: 25px; font-weight: 700; cursor: pointer; width: 100%;">
+            🔍 CHECK IF DOMAIN IS AVAILABLE
+          </button>
+          <div id="availability-message" style="margin-top: 15px; padding: 15px; border-radius: 10px; font-weight: 700; display: none;"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email Address:</label>
+          <input 
+            type="email" 
+            id="email" 
+            placeholder="you@example.com"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="full-name">Your Full Name:</label>
+          <input 
+            type="text" 
+            id="full-name" 
+            placeholder="John Smith"
+            required
+          >
+        </div>
+
+        <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; margin: 20px 0;">
+          <p style="font-size: 1.1em; margin-bottom: 10px;">💳 <strong>What Happens Next:</strong></p>
+          <p style="font-size: 0.95em; line-height: 1.6;">
+            1. Click the button below<br>
+            2. Pay $20 securely via Stripe<br>
+            3. We register your domain automatically<br>
+            4. Daily $20 rental starts immediately<br>
+            5. Full back office access unlocked!
+          </p>
+        </div>
+
+        <button type="submit" class="submit-button" id="submit-btn" disabled>
+          💳 PAY $20 & GET MY DOMAIN NOW
+        </button>
+        <p style="text-align: center; font-size: 0.9em; margin-top: 10px; opacity: 0.8;">
+          ⬆️ Check domain availability first before proceeding to payment
+        </p>
+      </form>
+    </div>
+
+    <div class="content-section" style="text-align: center;">
+      <h2>⚠️ Don't Miss This!</h2>
+      <p style="font-size: 1.2em; margin: 20px 0;">
+        This 7-day window closes PERMANENTLY. Once time runs out, this offer is gone forever.
+      </p>
+      <p style="font-size: 1.1em; opacity: 0.9;">
+        Secure your domain NOW and lock in your full upgrade before it's too late!
+      </p>
+    </div>
+  </div>
+
+  <script>
+    let promotionEndTime = null;
+
+    async function initCountdown() {
+      try {
+        const response = await fetch('/api/promotion-config');
+        if (response.ok) {
+          const data = await response.json();
+          promotionEndTime = new Date(data.promotion_end_date).getTime();
+        }
+      } catch (error) {
+        console.error('Error loading countdown:', error);
+      }
+      
+      if (!promotionEndTime) {
+        const fallbackEnd = new Date();
+        fallbackEnd.setDate(fallbackEnd.getDate() + 7);
+        promotionEndTime = fallbackEnd.getTime();
+      }
+      
+      startCountdown();
+    }
+
+    function startCountdown() {
+      const countdownEl = document.getElementById('countdown');
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = promotionEndTime - now;
+
+        if (distance < 0) {
+          countdownEl.textContent = "CLOSED";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl.textContent = `${days}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+
+    let domainIsAvailable = false;
+
+    function getReferrerFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('ref') || '';
+    }
+
+    function resetDomainCheck() {
+      domainIsAvailable = false;
+      const message = document.getElementById('availability-message');
+      message.style.display = 'none';
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.disabled = false;
+    }
+
+    async function checkDomainAvailability() {
+      const domainInput = document.getElementById('domain-name');
+      const checkBtn = document.getElementById('check-btn');
+      const message = document.getElementById('availability-message');
+      const submitBtn = document.getElementById('submit-btn');
+      
+      let domain = domainInput.value.trim().toLowerCase();
+      
+      if (!domain) {
+        alert('Please enter a domain name first!');
+        return;
+      }
+      
+      checkBtn.disabled = true;
+      checkBtn.textContent = '🔄 CHECKING DOMAIN...';
+      message.style.display = 'none';
+      
+      try {
+        const response = await fetch('/api/check-domain-availability', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ domain })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(data.error || 'Failed to check domain');
+        }
+        
+        message.style.display = 'block';
+        
+        if (data.available) {
+          domainIsAvailable = true;
+          message.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+          message.innerHTML = `✅ ${data.domain} is AVAILABLE! You can proceed to payment.`;
+          submitBtn.disabled = false;
+        } else {
+          domainIsAvailable = false;
+          message.style.background = 'linear-gradient(135deg, #dc3545, #c82333)';
+          message.innerHTML = `❌ ${data.domain} is already taken. Please try a different name.`;
+          submitBtn.disabled = true;
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        message.style.display = 'block';
+        message.style.background = 'linear-gradient(135deg, #ffc107, #ff9800)';
+        message.innerHTML = `⚠️ ${error.message || 'Could not check domain. Please try again.'}`;
+        domainIsAvailable = false;
+        submitBtn.disabled = true;
+      } finally {
+        checkBtn.disabled = false;
+        checkBtn.textContent = '🔍 CHECK IF DOMAIN IS AVAILABLE';
+      }
+    }
+
+    async function handleDomainSubmit(event) {
+      event.preventDefault();
+      
+      if (!domainIsAvailable) {
+        alert('⚠️ Please check if your domain is available first!');
+        return;
+      }
+      
+      const domain = document.getElementById('domain-name').value.trim().toLowerCase();
+      const email = document.getElementById('email').value.trim().toLowerCase();
+      const fullName = document.getElementById('full-name').value.trim();
+      const referrer = getReferrerFromURL();
+      const button = document.getElementById('submit-btn');
+      const originalText = button.textContent;
+      
+      button.disabled = true;
+      button.textContent = '🔄 CREATING PAYMENT SESSION...';
+      
+      try {
+        const response = await fetch('/api/create-domain-checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            domain, 
+            email, 
+            full_name: fullName,
+            referrer: referrer
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(data.error || 'Failed to create checkout');
+        }
+        
+        button.textContent = '💳 OPENING PAYMENT PAGE...';
+        
+        // Open Stripe in new tab (fixes loading issues)
+        const stripeWindow = window.open(data.checkout_url, '_blank');
+        if (!stripeWindow) {
+          alert('⚠️ Please allow popups for this site, then try again!');
+          button.disabled = false;
+          button.textContent = originalText;
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert(error.message || 'Something went wrong. Please try again.');
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initCountdown);
+  </script>
+
+  <footer style="text-align: center; padding: 30px 20px; color: rgba(255, 255, 255, 0.8); margin-top: 50px; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+    <p style="margin-bottom: 10px;">&copy; 2025 RizzosAI. All rights reserved.</p>
+    <p>
+      <a href="/privacy-policy.html" style="color: #ffd700; text-decoration: none; margin: 0 15px;">Privacy Policy</a> |
+      <a href="/terms-of-service.html" style="color: #ffd700; text-decoration: none; margin: 0 15px;">Terms of Service</a>
+    </p>
+  </footer>
+</body>
+</html>
