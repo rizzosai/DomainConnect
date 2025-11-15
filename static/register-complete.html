@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Registration - RizzosAI</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚀 RizzosAI Empire</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="registration-form">
+            <h2>✅ Payment Successful!</h2>
+            <p>Complete your registration to get your affiliate link and access to the dashboard.</p>
+            
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Choose Your Username *</label>
+                    <input type="text" id="username" required pattern="[a-zA-Z0-9]{3,}" minlength="3">
+                    <small>Your personalized domain link will be: rizzosai.com/<span id="usernamePreview">yourname</span></small>
+                </div>
+
+                <div id="error-message" class="error-message" style="display: none;"></div>
+                <div id="success-message" class="success-message" style="display: none;"></div>
+
+                <button type="submit" id="submitBtn">Complete Registration</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        const pendingData = JSON.parse(sessionStorage.getItem('pending_registration') || '{}');
+
+        if (pendingData.username) {
+            document.getElementById('fullName').value = pendingData.full_name || '';
+            document.getElementById('email').value = pendingData.email || '';
+            document.getElementById('username').value = pendingData.username || '';
+        }
+
+        document.getElementById('username').addEventListener('input', function() {
+            document.getElementById('usernamePreview').textContent = this.value || 'yourname';
+        });
+
+        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const username = document.getElementById('username').value.trim().toLowerCase();
+            const submitBtn = document.getElementById('submitBtn');
+            const errorDiv = document.getElementById('error-message');
+            const successDiv = document.getElementById('success-message');
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing...';
+            errorDiv.style.display = 'none';
+            successDiv.style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        session_id: sessionId || pendingData.session_id,
+                        username: username,
+                        email: email,
+                        full_name: fullName,
+                        domain_name: pendingData.domain_name || '',
+                        referrer: pendingData.referrer || urlParams.get('ref') || ''
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                sessionStorage.removeItem('pending_registration');
+                
+                successDiv.textContent = data.message || 'Registration successful! Check your email to verify your account.';
+                successDiv.style.display = 'block';
+                
+                setTimeout(() => {
+                    window.location.href = '/dashboard';
+                }, 2000);
+                
+            } catch (error) {
+                errorDiv.textContent = error.message || 'An error occurred. Please try again.';
+                errorDiv.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Complete Registration';
+            }
+        });
+    </script>
+
+    <footer style="text-align: center; padding: 30px 20px; color: #666; margin-top: 50px; border-top: 1px solid #ddd;">
+      <p style="margin-bottom: 10px;">&copy; 2025 RizzosAI. All rights reserved.</p>
+      <p>
+        <a href="/privacy-policy.html" style="color: #e60000; text-decoration: none; margin: 0 15px;">Privacy Policy</a> |
+        <a href="/terms-of-service.html" style="color: #e60000; text-decoration: none; margin: 0 15px;">Terms of Service</a>
+      </p>
+    </footer>
+</body>
+</html>
